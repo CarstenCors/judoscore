@@ -15,6 +15,7 @@ Free usage and modification for non-commercial use.
     var ippons = []; // holds ippon points
     var wazaris = []; // holds wazari points
     var shidos = []; // holds shido points
+    var yukos = []; // holds yuko points
     var fightActive; // true, if fight clock is running
     var osaeActive; // true, if osaekomi clock is running
     var goldenScoreActive; // true, if golden score mode is active
@@ -32,6 +33,7 @@ Free usage and modification for non-commercial use.
     
     var ippon_divs = [];
     var wazari_divs = [];
+    var yuko_divs = [];
     var shido_divs = [];
     var fightTime_div;
     var osaeTime_div;
@@ -184,7 +186,7 @@ Free usage and modification for non-commercial use.
             ippons[whiteBlue] = Math.max(ippons[whiteBlue] - 1, 0);               
         break;
       }
-      drawPoints();
+      drawPoints();      
     }
     
     /*
@@ -201,6 +203,25 @@ Free usage and modification for non-commercial use.
           
           case 2: // right mouse btn
               wazaris[whiteBlue] = Math.max(wazaris[whiteBlue] - 1, 0);               
+          break;
+        }
+        drawPoints();
+    }
+
+     /*
+     * Set yuko
+     * called by user event
+     */
+     function yuko(e) {
+        var whiteBlue = (this.id == "white_yuko") ? 0 : 1;
+        
+        switch(e.button) {
+          case 0: // left mouse btn
+          yukos[whiteBlue] = Math.min(yukos[whiteBlue] + 1, 99);
+          break;
+          
+          case 2: // right mouse btn
+          yukos[whiteBlue] = Math.max(yukos[whiteBlue] - 1, 0);               
           break;
         }
         drawPoints();
@@ -269,6 +290,7 @@ Free usage and modification for non-commercial use.
         for(var i = 0; i < 2; i++) {
             ippon_divs[i].innerHTML = (ippons[i] > 0) ? ippons[i] : "&nbsp;";
             wazari_divs[i].innerHTML = wazaris[i];
+            yuko_divs[i].innerHTML = yukos[i];
             shido_divs[i].src = "data:image/png;base64," + shidoImgs[shidos[i]];
         }
     }
@@ -304,6 +326,11 @@ Free usage and modification for non-commercial use.
         wazari_divs[1] = document.getElementById("blue_wazari");
         wazari_divs[0].addEventListener("mousedown", wazari);
         wazari_divs[1].addEventListener("mousedown", wazari);
+
+        yuko_divs[0] = document.getElementById("white_yuko");
+        yuko_divs[1] = document.getElementById("blue_yuko");
+        yuko_divs[0].addEventListener("mousedown", yuko);
+        yuko_divs[1].addEventListener("mousedown", yuko);
         
         shido_divs[0] = document.getElementById("white_shido");
         shido_divs[1] = document.getElementById("blue_shido");
@@ -341,6 +368,7 @@ Free usage and modification for non-commercial use.
         ippons = [0,0];
         wazaris = [0,0];
         shidos = [0,0];
+        yukos = [0,0];
         fightActive = false;
         osaeActive = false;
         goldenScoreActive = false;
@@ -575,8 +603,8 @@ body {height: 100%; margin: 0px; padding: 0px; background-color: #000000;}
 #white .name * {color: #000000;}
 #blue .name * {color: #ffffff;}
 
-#white .points {position: absolute; bottom: 3%; left: 50%; color: #000000;}
-#blue .points {position: absolute; top: 3%; left: 50%; color: #ffffff;}
+#white .points {position: absolute; bottom: 3%; left: 40%; color: #000000;}
+#blue .points {position: absolute; top: 3%; left: 40%; color: #ffffff;}
 
 .name {font: bold 60px sans-serif; white-space: nowrap; overflow: hidden;}
 .name input {background: none; border: none; font: bold 60px sans-serif;}
@@ -610,6 +638,7 @@ div {-moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select:
     <div class="points">
         <div id="white_ippon" class="point" title="Ippon">&nbsp;</div>
         <div id="white_wazari" class="point" title="Wazari">0</div>
+        <div id="white_yuko" class="point" title="Yuko">0</div>
         <img id="white_shido" class="shido" title="Shido" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
     </div>
     
@@ -619,6 +648,7 @@ div {-moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select:
     <div class="points">
         <div id="blue_ippon" class="point" title="Ippon">&nbsp;</div>
         <div id="blue_wazari" class="point" title="Wazari">0</div>
+        <div id="blue_yuko" class="point" title="Yuko">0</div>
         <img id="blue_shido" class="shido" title="Shido" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR42mNkYAAAAAYAAjCB0C8AAAAASUVORK5CYII="/>
     </div>
 </div>
