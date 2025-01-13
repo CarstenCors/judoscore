@@ -396,7 +396,7 @@ Free usage and modification for non-commercial use.
         fightTimeSec = fightTimeSecConf;
         mate();
     }
-    
+  
     /*
      * Reset Osaekomi time
      */
@@ -415,7 +415,7 @@ Free usage and modification for non-commercial use.
             fightTimeSecConf = Math.max(1, parseInt(document.getElementById("menu_fighttime").value)); 
             osaeTimeSecConf = Math.max(1, parseInt(document.getElementById("menu_osaetime").value));
             goldenScoreTimeSecConf = Math.max(0, parseInt(document.getElementById("menu_goldenScoretime").value));
-            bellNumConf = Math.max(0, Math.min(7, parseInt(document.getElementById("menu_bellnum").value)));
+            bellNumConf = Math.max(0, Math.min(8, parseInt(document.getElementById("menu_bellnum").value)));
             
             saveConfig();
             menu_div.style.display = "none";
@@ -536,8 +536,9 @@ Free usage and modification for non-commercial use.
     * Access-Control-Allow-Origin: * may be required to allow accessing the server from localhost
     */
     function requestServerFightInfo() {
-    	if(fightInfoJsonServerUrl)
+    	if(fightInfoJsonServerUrl){
     	    ajaxLoad(fightInfoJsonServerUrl + "&arena=" + matConf);
+        }
     }
     
     function serverFightInfoReceived(response) {
@@ -637,7 +638,7 @@ div {-moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select:
 
 </style>
 <div id="white">
-    <div id="whitename" class="name"><input type="text" value="White" title="Fightername"/></div>
+    <div id="whitename" class="name"><input type="text" value="White" title="Fightername" /></div>
     <div class="points">
         <div id="white_ippon" class="point" title="Ippon">&nbsp;</div>
         <div id="white_wazari" class="point" title="Wazari">0</div>
@@ -689,7 +690,7 @@ div {-moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select:
         <tr><td><label for="menu_fighttime">Fight time (seconds): </label></td><td><input type="text" id="menu_fighttime" value=""/></td></tr>
         <tr><td><label for="menu_osaetime">Osaekomi time (seconds): </label></td><td><input type="text" id="menu_osaetime" value=""/></td></tr>
         <tr><td><label for="menu_goldenScoretime">GoldenScore time (seconds, 0=endless): </label></td><td><input type="text" id="menu_goldenScoretime" value=""/></td></tr>
-        <tr><td><label for="menu_bellnum">Bell sound (0-4): </label></td><td><input type="text" id="menu_bellnum" value=""/></td></tr>
+        <tr><td><label for="menu_bellnum">Bell sound (0-8): </label></td><td><input type="text" id="menu_bellnum" value=""/></td></tr>
         <tr><td></td><td><input type="button" id="menusavebtn" value="Save" onclick="toggleMenu();"></td></tr>
     </table>
     <h1>Manual time override</h1>

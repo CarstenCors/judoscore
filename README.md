@@ -1,25 +1,54 @@
-# Judo score board
+# Judo-Anzeigetafel
 
-A full Judo scoreboard software in a *single HTML file*.
-Usable without webserver, just open score.html locally in your webbrowser. The ressource folder is for convenience only.
+Eine vollständige Judo-Anzeigetafel-Software in einer *einzigen HTML-Datei*.  
+Kann ohne Webserver verwendet werden, einfach die Datei `score.html` lokal im Webbrowser öffnen. Der Ressourcenordner dient nur der Bequemlichkeit.
 
-![screenshot](screenshot.jpg?raw=true "Example view")
+<img src="screenshot.jpg?raw=true" alt="Beispielansicht" width="400" height="200" />
 
-## HW-setup
-The software was designed to operate in "duplicate-screen"-setup, so that the operator sees the same as the audience. 
+## Hardware-Einrichtung
+Die Software wurde für den Betrieb in einem "Duplicate-Screen"-Setup entwickelt, sodass der Bediener dasselbe sieht wie das Publikum.
 
-## Configuration
-On first start or by navigating to the setting menu (gear icon in bottom-left corner), the configuration dialogue is opened.
+## Konfiguration
+Beim ersten Start oder durch Aufrufen des Einstellungsmenüs (Zahnrad-Symbol in der unteren linken Ecke) wird der Konfigurationsdialog geöffnet.
 
-## Operating
-A brief usage description is included in the menu. Points are assigned via mouse control, but there are also various shortcuts to control clocks, etc.
+## Bedienung
+Eine kurze Bedienungsanleitung ist im Menü enthalten. Punkte können mit der Maus zugewiesen werden, es gibt jedoch auch verschiedene Tastenkombinationen zur Steuerung von Uhren usw.
 
-## Webserver interface
-There exists an interface to import live JSON data to display names and group/ round information from a third party webserver / database.
+### Maus Bedienung
 
-## Own bell / horn / audio samples
-Own audio files can be added in base64 embedded form <audio id="sound[n]" src="data:audio/ogg;base64,...>
+| Taste  | Funktion              |
+|--------|-----------------------|
+| Kampfzeit (links-klick)  | Mate / Hajime         |
+| Kampfzeit (doppel-klick)  | Kampfzeit zurücksetzen         |
+| Haltezeit (link-klick) | Osaekomi / Toketa |
+| Haltezeit (doppel-klick) | Haltezeit zurücksetzen |
+| Wertung (links-klick) | Wertung geben (Ippon / Wazari / Yuko) |
+| Wertung (rechts-klick) | Wertung zurücknehmen (Ippon / Wazari / Yuko) |
+| Strafe (links-klick) | Sido geben |
+| Strafe (rechts-klick) | Sido zurücknehmen |
 
-## Licence
-Free usage and modification for non-commercial use. 
-(c) 2019 https://github.com/tuxmike/
+### Tastenbelegungen
+
+| Taste  | Funktion              |
+|--------|-----------------------|
+| SPACE  | Mate / Hajime         |
+| H      | Hajime               |
+| M      | Mate                 |
+| O      | Osaekomi             |
+| T      | Toketa               |
+| G      | Goldenscore          |
+| B      | Glocke               |
+| R      | Alles Zurücksetzen   |
+| C      | Menü                 |
+
+## Schnittstelle für Webserver
+Es gibt eine Schnittstelle, um Live-JSON-Daten zu importieren, mit denen Namen sowie Gruppen- und Rundeninformationen von einem Drittanbieter-Webserver oder einer Datenbank angezeigt werden können.
+
+## Eigene Glocken-/Horn-/Audiodateien
+Eigene Audiodateien können in eingebetteter Base64-Form hinzugefügt werden:  
+`<audio id="sound[n]" src="data:audio/ogg;base64,...>`
+
+## Lizenz
+Kostenlose Nutzung und Modifikation für nicht-kommerzielle Zwecke.  
+(c) 2019 [https://github.com/tuxmike/](https://github.com/tuxmike/)
+
