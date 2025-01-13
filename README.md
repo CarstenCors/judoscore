@@ -5,6 +5,8 @@ Kann ohne Webserver verwendet werden, einfach die Datei `score.html` lokal im We
 
 <img src="screenshot.jpg?raw=true" alt="Beispielansicht" width="400" height="200" />
 
+Inklusive dem 2025 wieder zurückgekehrten Yuko als Wertung.
+
 ## Hardware-Einrichtung
 Die Software wurde für den Betrieb in einem "Duplicate-Screen"-Setup entwickelt, sodass der Bediener dasselbe sieht wie das Publikum.
 
