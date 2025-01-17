@@ -9,9 +9,8 @@ Free usage and modification for non-commercial use.
 <title>Judo score board</title>
 <meta http-equiv="content-type" content="text/html; charset=utf-8">
 </head>
-<body onload="init()">
+<body onload="init()">    
 <script type="text/javascript">
-
     var ippons = []; // holds ippon points
     var wazaris = []; // holds wazari points
     var shidos = []; // holds shido points
@@ -51,7 +50,16 @@ Free usage and modification for non-commercial use.
                     "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"];
     
     // set this variable, if you want to load fighter names from a webserver
+    var useLocalData = false;
     var fightInfoJsonServerUrl = ""; 
+
+    var localData = {        
+    "whitename": "Jannis Cors, PSV Bochum",
+    "redname": "Melissa Cors, PSV Bochum",
+    "groupname": "KET 2025",
+    "roundname": "U13 -40kg"
+}
+    
     
     /*
      * Start fight counter
@@ -383,8 +391,8 @@ Free usage and modification for non-commercial use.
         resetOsaeTime();
         
         // try to load fight info
-        if(fightInfoJsonServerUrl)
-        	requestServerFightInfo();
+        //if(fightInfoJsonServerUrl)
+        requestServerFightInfo();
         
         draw();
     }
@@ -536,13 +544,18 @@ Free usage and modification for non-commercial use.
     * Access-Control-Allow-Origin: * may be required to allow accessing the server from localhost
     */
     function requestServerFightInfo() {
-    	if(fightInfoJsonServerUrl){
-    	    ajaxLoad(fightInfoJsonServerUrl + "&arena=" + matConf);
+        if(useLocalData === true){
+           // Laden der JSON-Datei
+           serverFightInfoReceived(localData);
+        }
+        else{
+            if(fightInfoJsonServerUrl){
+                ajaxLoad(fightInfoJsonServerUrl + "&arena=" + matConf);
+            }
         }
     }
     
-    function serverFightInfoReceived(response) {
-        var data = JSON.parse(response);
+    function serverFightInfoReceived(data) {      
                 
         if(data.hasOwnProperty("whitename")) {
             document.getElementById("whitename").innerHTML = data.whitename;
@@ -576,7 +589,8 @@ Free usage and modification for non-commercial use.
           xmlHttp.open('GET', url, true);
           xmlHttp.onreadystatechange = function () {
               if (xmlHttp.readyState == 4 && this.status == 200) {
-                  serverFightInfoReceived(xmlHttp.responseText);
+                var data = JSON.parse(xmlHttp.responseText);
+                  serverFightInfoReceived(data);
               }
           };
           xmlHttp.send();
@@ -638,7 +652,7 @@ div {-moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select:
 
 </style>
 <div id="white">
-    <div id="whitename" class="name"><input type="text" value="White" title="Fightername" /></div>
+    <div id="whitename" class="name"><input type="text" value=" " title="Fightername" /></div>
     <div class="points">
         <div id="white_ippon" class="point" title="Ippon">&nbsp;</div>
         <div id="white_wazari" class="point" title="Wazari">0</div>
@@ -648,7 +662,7 @@ div {-moz-user-select: -moz-none; -khtml-user-select: none; -webkit-user-select:
     
 </div>
 <div id="blue">
-    <div id="bluename" class="name"><input type="text" value="Blue" title="Fightername"/></div>
+    <div id="bluename" class="name"><input type="text" value=" " title="Fightername"/></div>
     <div class="points">
         <div id="blue_ippon" class="point" title="Ippon">&nbsp;</div>
         <div id="blue_wazari" class="point" title="Wazari">0</div>
