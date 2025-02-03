@@ -52,5 +52,5 @@ Eigene Audiodateien können in eingebetteter Base64-Form hinzugefügt werden:
 
 ## Lizenz
 Kostenlose Nutzung und Modifikation für nicht-kommerzielle Zwecke.  
-(c) 2019 [https://github.com/tuxmike/](https://github.com/tuxmike/)
+(c) 2019 [https://github.com/carstencors/](https://github.com/carstencors/)
 

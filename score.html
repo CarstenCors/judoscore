@@ -249,6 +249,9 @@ Free usage and modification for non-commercial use.
             switch (e.button) {
                 case 0: // left mouse btn
                     shidos[whiteBlue] = Math.min(shidos[whiteBlue] + 1, 3);
+                    if (shidos[whiteBlue] == 3) {
+                        hansokomake();
+                    }
                     break;
 
                 case 2: // right mouse btn
@@ -257,6 +260,23 @@ Free usage and modification for non-commercial use.
             }
             drawPoints();
         }
+
+        function hansokomake() {
+            mate();
+            drawHandokomake();
+            bell();
+        }
+
+        function drawHandokomake() {
+            var banner = document.getElementById("hansokumake-banner");
+            banner.style.display = "block";
+            setTimeout(function () {
+                banner.style.display = "none";
+            }, 5000);
+        }
+
+
+
 
         /*
          * Special golden score mode
@@ -668,7 +688,7 @@ Free usage and modification for non-commercial use.
             margin-left: 45%;
         }
 
-        .score-ippon, .score-wazari, .score-yuko{
+        .score-ippon, .score-wazari, .score-yuko {
             display: inline-block;
             font: bold 35px sans-serif;
             color: white;
@@ -916,6 +936,27 @@ Free usage and modification for non-commercial use.
                 text-align: center;
             }
 
+        #hansokumake-banner {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: red;
+            color: white;
+            font: bold 100px sans-serif; /* 60% larger */
+            padding: 40px; /* 60% larger */
+            border: 10px solid white; /* 60% larger */
+            z-index: 1000;
+            animation: blink 2.5s linear infinite;
+        }
+
+        @keyframes blink {
+            50% {
+                opacity: 0;
+            }
+        }
+
         div {
             -moz-user-select: -moz-none;
             -khtml-user-select: none;
@@ -924,6 +965,7 @@ Free usage and modification for non-commercial use.
             user-select: none;
         }
     </style>
+    <div id="hansokumake-banner">Hansoku-make!</div>
     <div id="white">
         <div id="whitename" class="name"><input type="text" value="Kämpfer weiß" title="Fightername" /></div>
         <div id="whiteclub" class="club"><input type="text" value="Verein weiß" title="Vereinname" /></div>
