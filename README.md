@@ -3,7 +3,8 @@
 Eine vollständige Judo-Anzeigetafel-Software in einer *einzigen HTML-Datei*.  
 Kann ohne Webserver verwendet werden, einfach die Datei `score.html` lokal im Webbrowser öffnen. Der Ressourcenordner dient nur der Bequemlichkeit.
 
-<img src="screenshot.jpg?raw=true" alt="Beispielansicht" width="400" height="200" />
+![grafik](https://github.com/user-attachments/assets/592a6831-6346-4072-9506-95a37e4f658d)
+
 
 Inklusive dem 2025 wieder zurückgekehrten Yuko als Wertung.
 
