@@ -216,8 +216,7 @@ Free usage and modification for non-commercial use.
             switch (e.button) {
                 case 0: // left mouse btn
                     wazaris[whiteBlue] = Math.min(wazaris[whiteBlue] + 1, 2);
-                    if (wazaris[whiteBlue] == 2)
-                    {
+                    if (wazaris[whiteBlue] == 2) {
                         ippons[whiteBlue] = Math.min(ippons[whiteBlue] + 1, 1);
                         wazaris[whiteBlue] = 0;
                         fightTimeOver();
@@ -305,14 +304,13 @@ Free usage and modification for non-commercial use.
 
             if (osaeActive) { // increment osaekomi time
                 osaeTimeSec++;
-                if (osaeTimeSec < 5)
-                {
+                if (osaeTimeSec < 5) {
                     osaeTimeValue = "";
                 }
                 else if (osaeTimeSec >= 5 && osaeTimeSec < 10) {
                     osaeTimeValue = "Yuko";
                 }
-                else if (osaeTimeSec >= 10 && osaeTimeSec < osaeTimeSecConf){
+                else if (osaeTimeSec >= 10 && osaeTimeSec < osaeTimeSecConf) {
                     osaeTimeValue = "Wazari";
                 }
                 else if (osaeTimeSec >= osaeTimeSecConf) {
@@ -325,8 +323,12 @@ Free usage and modification for non-commercial use.
             if (osaeActive && osaeTimeSec >= osaeTimeSecConf)
                 osaeTimeOver();
 
-            if (fightActive && !isEndlessGoldenScore() && fightTimeSec == 0)
-                fightTimeOver();
+            if (fightActive && !isEndlessGoldenScore() && fightTimeSec == 0) {
+                if (!osaeActive) {
+                    fightTimeOver();
+                }
+            }
+
         }
 
         /*
